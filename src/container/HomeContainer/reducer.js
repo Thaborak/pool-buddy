@@ -1,6 +1,7 @@
 const initialState = {
 	list: [],
 	isLoading: true,
+	value: [],
 	chlorine: [],
 	gallons: [],
 	ph: [],

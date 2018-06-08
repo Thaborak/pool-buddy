@@ -5,6 +5,8 @@ import { AppRegistry, StyleSheet, View, Text } from "react-native";
 class SliderExample extends React.Component {
     
    state = this.props.value
+    max = this.props.maximumValue
+
 
 
     render() {
@@ -13,7 +15,7 @@ class SliderExample extends React.Component {
                 <Slider
                     value={this.state.value}
                     onValueChange={value => this.setState({ value })}
-                    maximumValue = {40000}
+                    maximumValue = {this.max}
 
     />
                 <Text>

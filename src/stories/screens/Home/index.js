@@ -18,17 +18,19 @@ import {
 
 import styles from "./styles";
 import SliderExample from "./slider";
-import { setGallons, setPh, setChlorine } from "./actions";
+import { setGallons, setPh, setChlorine } from "../../../container/HomeContainer/actions";
 
 
 
 export interface Props {
   navigation: any;
   list: any;
-  slider: any;
 }
 export interface State { }
 class Home extends React.Component<Props, State> {
+// 		this.props.setChlorine();
+// this.props.setGallons();
+// this.props.setPh();
   render() {
     return (
       <Container style={styles.container}>
@@ -54,10 +56,11 @@ class Home extends React.Component<Props, State> {
                 key={i}
               >
                 <SliderExample
-                  value={{ value: 5 }}
-                  maximumValue={40000} 
+                  value={{value: item.ideal}}
+                  maximumValue={item.max}
+                  // onChange={setChlorine(this.value)}
                 />
-                <Text>{item}</Text>
+                <Text>{item.name}</Text>
               </ListItem>
             ))}
             <Button><Text>Save Log</Text></Button>
