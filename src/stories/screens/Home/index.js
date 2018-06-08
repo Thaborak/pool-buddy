@@ -28,10 +28,13 @@ export interface Props {
 }
 export interface State { }
 class Home extends React.Component<Props, State> {
-// 		this.props.setChlorine();
-// this.props.setGallons();
-// this.props.setPh();
   render() {
+    // if ({props.item.name} === "Chlorine") {
+    //   this.props.setChlorine();
+    // }
+
+    // this.props.setGallons();
+    // this.props.setPh();
     return (
       <Container style={styles.container}>
         <Header>
@@ -56,17 +59,22 @@ class Home extends React.Component<Props, State> {
                 key={i}
               >
                 <SliderExample
-                  value={{value: item.ideal}}
+                  name={item.name}
+                  value={{ value: item.ideal }}
                   maximumValue={item.max}
-                  // onChange={setChlorine(this.value)}
+                  minimumValue={item.min}
+                  onValueChange={item.function}
+                  step={item.step}
                 />
-                <Text>{item.name}</Text>
+                {/* <Text>{item.name}</Text> */}
               </ListItem>
             ))}
-            <Button><Text>Save Log</Text></Button>
           </List>
         </Content>
+        <Button><Text>Save Log</Text></Button>
+
       </Container>
+
     );
   }
 
@@ -74,5 +82,7 @@ class Home extends React.Component<Props, State> {
 
 
 }
+
+
 
 export default Home;

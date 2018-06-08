@@ -2,9 +2,9 @@ const initialState = {
 	list: [],
 	isLoading: true,
 	value: [],
-	chlorine: [],
-	gallons: [],
-	ph: [],
+	chlorine: [3],
+	gallons: [20000],
+	ph: [7.2],
 };
 
 export default function(state: any = initialState, action: Function) {
