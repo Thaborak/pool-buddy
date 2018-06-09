@@ -46,5 +46,8 @@ function saveLog() {
 const mapStateToProps = state => ({
 	data: state.homeReducer.list,
 	isLoading: state.homeReducer.isLoading,
+	chlorine: state.value,
+	ph: state.value,
+	gallons: state.value
 });
 export default connect(mapStateToProps, bindAction)(HomeContainer);

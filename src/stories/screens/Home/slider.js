@@ -7,11 +7,17 @@ import { setGallons, setPh, setChlorine } from "../../../container/HomeContainer
 
 class SliderExample extends React.Component {
 
-    // componentDidUpdate(){
-    //     {this.function}(this.state.value);
-
-    // }
-
+// componentWillUpdate() {
+//     if (this.props.name === "Chlorine") {
+//         this.props.dispatch(setChlorine(this.state.value));
+//     }
+//     if (this.props.name === "Ph") {
+//         this.props.dispatch(setPh(this.state.value));
+//     }
+//     if (this.props.name === "Gallons") {
+//         this.props.dispatch(setGallons(this.state.value));
+//     }
+// }
     state = this.props.value
     max = this.props.maximumValue
     min = this.props.minimumValue
@@ -37,8 +43,6 @@ class SliderExample extends React.Component {
                     name={this.name}
                     value={this.state.value}
                     onValueChange={value => this.setState({ value })}
-                    // onValueChange={value => { this.function({ value })}}
-
                     maximumValue={this.max}
                     step={this.step}
                     // trackStyle={2}

@@ -19,22 +19,17 @@ import {
 import styles from "./styles";
 import SliderExample from "./slider";
 import { setGallons, setPh, setChlorine } from "../../../container/HomeContainer/actions";
+import { connect } from "react-redux";
 
 
 
-export interface Props {
-  navigation: any;
-  list: any;
-}
-export interface State { }
-class Home extends React.Component<Props, State> {
+// export interface Props {
+//   navigation: any;
+//   list: any;
+// }
+// export interface State { }
+class Home extends React.Component/*<Props, State>*/ {
   render() {
-    // if ({props.item.name} === "Chlorine") {
-    //   this.props.setChlorine();
-    // }
-
-    // this.props.setGallons();
-    // this.props.setPh();
     return (
       <Container style={styles.container}>
         <Header>
@@ -70,8 +65,9 @@ class Home extends React.Component<Props, State> {
               </ListItem>
             ))}
           </List>
+          <Text>{this.props.gallons}</Text>
         </Content>
-        <Button><Text>Save Log</Text></Button>
+        {/* <Button><Text>Save Log{this.props}</Text></Button> */}
 
       </Container>
 
@@ -84,5 +80,4 @@ class Home extends React.Component<Props, State> {
 }
 
 
-
-export default Home;
+export default connect()(Home);
